@@ -1,0 +1,26 @@
+{
+    "manifest_version": 2,
+    "name": "Grid Setka",
+    "description": "Grid for design and development",
+    "version": "1.0.0",
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"],
+            "css": ["grid-setka.css"]
+        }
+    ],
+    "background": {
+        "scripts": ["background.js"]
+      },
+    "icons": {"128": "grid_128.png"},
+    "browser_action": {
+        "default_icon": "grid_19.png",
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "activeTab",
+        "storage",
+        "tabs"
+    ]
+}

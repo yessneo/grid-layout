@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GRID</title>
+    <link rel="stylesheet" href="grid-setka.css">
+</head>
+<body class="">
+    <div class="grid"></div>
+<h1>ECC COMPUTER</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam blanditiis deserunt dolore error fugit, ipsam nostrum nulla numquam, officia, perferendis placeat quos rerum suscipit vel? Atque natus perferendis sint.</p>
+
+<label for="grid-sides">Grid-Sides</label>
+<input type="text" value="" id="grid-sides"><br>
+<label for="grid-gutter">Grid-gutter</label>
+<input type="" value="" id="grid-gutter"><br>
+<label for="grid-columns">grid-columns</label>
+<input type="" value="" id="grid-columns">
+
+
+<script>
+var gridSides = document.querySelector('#grid-sides');
+var gridGutter = document.querySelector('#grid-gutter');
+var gridColumns = document.querySelector('#grid-columns');
+var grid = document.querySelector('.grid');
+
+
+var styling = getComputedStyle(document.body);
+
+// if (window.matchMedia("(min-width: 1008px)").matches) {
+//   /* the viewport is at least 400 pixels wide */
+// } else {
+//   /* the viewport is less than 400 pixels wide */
+// }
+
+console.log(styling.getPropertyValue('--grid-sides'));
+gridSides.addEventListener('change', function(){
+  grid.style.setProperty('--grid-sides', gridSides.value + 'px');
+  console.log(styling.getPropertyValue('--grid-sides'));
+});
+
+// console.log(style.getPropertyValue('--grid-gutter'));
+// gridGutter.addEventListener('change', function(){
+//   grid.style.setProperty('--grid-gutter', gridGutter.value + 'px');
+// });
+
+// gridColumns.addEventListener('change', function(){
+//   grid.style.setProperty('--grid-columns', gridColumns.value);
+//   console.log(style.getPropertyValue('--grid-columns'));
+// });
+
+if (window.matchMedia("(min-width: 1008px)").matches) {
+  /* the viewport is at least 400 pixels wide */
+  gridSides.addEventListener('change', function(){
+  grid.style.setProperty('--grid-sides', gridSides.value + 'px');
+  console.log(styling.getPropertyValue('--grid-sides'));
+});
+console.log('sdsdsad')
+} else {
+  /* the viewport is less than 400 pixels wide */
+  console.log(styling.getPropertyValue('--grid-sides'));
+}
+
+if (window.matchMedia("(min-width: 736px)").matches) {
+  /* the viewport is at least 400 pixels wide */
+  gridSides.addEventListener('change', function(){
+  grid.style.setProperty('--grid-sides', gridSides.value + 'px');
+  console.log(styling.getPropertyValue('--grid-sides'));
+});
+console.log('sdsdsad')
+} else {
+  /* the viewport is less than 400 pixels wide */
+  console.log(styling.getPropertyValue('--grid-sides'));
+}
+console.log(grid.style.width);
+</script>
+</body>
+</html>
