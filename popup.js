@@ -1,7 +1,17 @@
+// Vars
+
+
 // COLUMNS
 document.querySelector('#grid-columns').addEventListener('keyup', () => {
   // read the colour that the user has selected
   const gridColumns = document.querySelector('#grid-columns').value;
+
+  console.log(gridColumns);
+
+  
+
+
+  
 
 // Store the user's data
 chrome.storage.local.set({gridColumns});
@@ -43,8 +53,25 @@ chrome.storage.local.set({gridSides});
 
 
 
+//Change input value to current
+chrome.storage.local.get('gridColumns', (response) => {
+  if (response.gridColumns) {
+    document.querySelector('#grid-columns').value = response.gridColumns;
+  }
+});
+chrome.storage.local.get('gridGutter', (response) => {
+  if (response.gridGutter) {
+    document.querySelector('#grid-gutter').value = response.gridGutter;
+  }
+});
+chrome.storage.local.get('gridSides', (response) => {
+  if (response.gridSides) {
+    document.querySelector('#grid-sides').value = response.gridSides;
+  }
+});
 
 
+// Vars
 
 
 

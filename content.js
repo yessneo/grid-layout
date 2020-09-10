@@ -25,6 +25,7 @@ chrome.storage.local.get('gridColumns', (response) => {
   // console.log(response)
 });
 
+
 // GUTTERS
 chrome.storage.local.get('gridGutter', (response) => {
 
